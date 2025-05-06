@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Persists household.
-      fromTopic: save-household-health-topic
+      fromTopic: save-household-topic-health
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD
@@ -57,7 +57,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates household.
-      fromTopic: update-household-health-topic
+      fromTopic: update-household-topic-health
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD
@@ -120,7 +120,7 @@ serviceMaps:
 
     - version: 1.0
       description: Deletes household.
-      fromTopic: delete-household-health-topic
+      fromTopic: delete-household-topic-health
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD
@@ -146,7 +146,7 @@ serviceMaps:
 
     - version: 1.0
       description: Persists household member.
-      fromTopic: save-household-member-health-topic
+      fromTopic: save-household-member-topic-health
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD
@@ -203,7 +203,7 @@ serviceMaps:
             - jsonPath: $.*.memberRelationships.*.isDeleted
     - version: 1.0
       description: Update household member.
-      fromTopic: update-household-member-health-topic
+      fromTopic: update-household-member-topic-health
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD
@@ -244,7 +244,7 @@ serviceMaps:
             - jsonPath: $.*.memberRelationships.*.selfId
     - version: 1.0
       description: Deletes household Member.
-      fromTopic: delete-household-member-health-topic
+      fromTopic: delete-household-member-topic-health
       isTransaction: true
       isAuditEnabled: true
       module: HOUSEHOLD

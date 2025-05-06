@@ -3,11 +3,11 @@ serviceMaps:
   mappings:
     - version: 1.0
       name: idpool
-      description: Persists a batch of unique IDs into the id_pool table
+      description: Persists a batch of unique IDs into the health.id_pool table
       fromTopic: save-in-id-pool
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO id_pool (id, status, tenantId)
+        - query: INSERT INTO health.id_pool (id, status, tenantId)
             VALUES (?, 'UN_ASSIGNED', ?)
             ON CONFLICT (id) DO NOTHING;
 
@@ -23,7 +23,7 @@ serviceMaps:
       isTransaction: true
       queryMaps:
         - query: |
-            UPDATE id_pool SET status = ?, updated_at = CURRENT_TIMESTAMP
+            UPDATE health.id_pool SET status = ?, updated_at = CURRENT_TIMESTAMP
             WHERE id = ?;
           basePath: idPool.*
           jsonMaps:
